@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="contact.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text],input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f23f;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.contactus{
+  border-radius: 5px;
+  background-color: #f2f2f23f;
+  margin-left: 30px;
+  width: 800px;
+  height: 700px;
+} 
+.map
+{ width:200px;
+  height:100px;
+  padding:10px;
+  margin:20px;
+}
+iframe{
+  width:750px;
+  height:200px;
+} 
+.form
+{ width:500px;
+  background-color: #f2f2f23f;
+  margin-left: -100px;
+}
+form{
+  margin-left: 10px;
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+        <h1>EASYSHOP</h1>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="index.php">Signup</a></li>
+            <li><a href="index.php">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+  <div class="contactus">
+    <h1 style="text-align: center;">Contact Us</h1>
+    <p style="text-align: center;">We'd love to hear from you! Whether you have a question about our products, an issue with your order, or just want to provide feedback, our team is here to help.</p>
+    
+    <div class="contact-info">
+        <h2 style="text-align: center;">Get in Touch</h2>
+        <div style="margin-left: 30px;">
+            <strong>Customer Service:</strong><br>
+            Email: <a href="mailto:support@easyshop.com">support@easyshop.com</a><br>
+            Phone: +91 9347894403<br>
+            Hours: Monday to Friday, 9 AM - 6 PM (EST)
+        </div>
+        <div style="margin-left: 30px;">
+            <strong>Mailing Address:</strong><br>
+            EASYSHOP<br>
+            Shankaraiha Gowdaroad<br>
+            Mandya<br>
+            Mandya, Karnataka, 571401
+        </div>
+        <div class="map">
+          <h1>locate us</h1>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31159.270579276097!2d76.87526894999999!3d12.522199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1721557378245!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+  </div>
+  </div>
+  <div class="form">
+  <h3 style="text-align: center;color:black">Contact Form</h3>
+  <form onsubmit="sendMail(); reset(); return false">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="Your email">
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write your Problem.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+<div id="icons-phone" style="text-align:center;width: 100%;">
+  <div class="social-links" style="font-size: 40px;">
+      <a href="https://www.instagram.com/1243karthikram?igsh=MTZlMndzbWZwMnZraw==" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/qr/W76Y5W37OBTEA1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://github.com/1243KARTHIKRAM/2nd-year-project" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/karthik-ram-b92630260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div id="phone">
+    <h3 id="number">+91 9347894403  /  +91 6309143024</h4>
+  </div>
+</div>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script >
+   
+    function sendMail(){
+        const fname = document.getElementById("fname");
+    const lname = document.getElementById("lname");
+    const email = document.getElementById("email");
+    const subject = document.getElementById("subject");
+    let ebody = `<b> First name: </br> ${fname.value}<br/><b> Last name: </br> ${lname.value}<br/><b> Email: </br> ${email.value}<br/><b> Discription: </br> ${subject.value}`
+    Email.send({
+    SecureToken : "4b692ac3-786d-412a-961f-ff24e178077b",
+    To : 'gkarthikram9347@gmail.com',
+    From : "1243gkarthik@gmail.com",
+    Subject :`EasyShop`,
+    Body : `${ebody}`
+}).then(
+  message => alert(message)
+);
+    }
+</script>
+</body>
+</html>
